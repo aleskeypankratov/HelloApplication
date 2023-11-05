@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     fun onClickHello(view: View) {
 
         val readText: String = editText.text.toString()
-        startActivity(Intent(this, HelloActivity::class.java).putExtra("name", readText))
+        if (readText.isNotEmpty()) {
+            startActivity(Intent(this, HelloActivity::class.java).putExtra("name", readText))
+        }
     }
 }
